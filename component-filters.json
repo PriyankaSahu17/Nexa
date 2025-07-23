@@ -16,7 +16,8 @@
       "cards",
       "columns",
       "fragment",
-      "immersive-teaser"
+      "immersive-teaser",
+      "car-carousel"
     ]
   },
   {
@@ -38,6 +39,20 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "immersive-teaser",
+    "components": [
+      "text",
+      "image",
+      "button"
+    ]
+  },
+  {
+    "id": "car-carousel",
+    "components": [
+      "carousel-item"
     ]
   }
 ]
