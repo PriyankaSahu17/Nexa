@@ -236,6 +236,10 @@ function readBlockConfig(block) {
  */
 async function loadCSS(href) {
   return new Promise((resolve, reject) => {
+    // const link = document.createElement('link');
+    // link.rel = 'stylesheet';
+    // link.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
+    // document.head.appendChild(link);
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
