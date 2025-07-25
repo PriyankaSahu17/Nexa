@@ -274,6 +274,7 @@
       {
         "component": "reference",
         "valueType": "string",
+        "assetType": "video",
         "name": "image",
         "label": "Image",
         "multi": false

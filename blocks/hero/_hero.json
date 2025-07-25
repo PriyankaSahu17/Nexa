@@ -29,6 +29,7 @@
         },
         {
           "component": "text",
+          "assetType": "video",
           "valueType": "string",
           "name": "imageAlt",
           "label": "Alt",
