@@ -56,20 +56,20 @@
           "valueType": "string",
           "options": [
             {
-              "name": "Option 1",
-              "value": ""
+              "name": "Petrol",
+              "value": "Petrol"
             },
             {
-              "name": "Option 2",
-              "value": ""
+              "name": "New Petrol",
+              "value": "New Petrol"
             },
             {
-              "name": "Option 3",
-              "value": ""
+              "name": "CNG",
+              "value": "CNG"
             },
             {
-              "name": "Option 4",
-              "value": ""
+              "name": "Emergency Response Guide",
+              "value": "Emergency Response Guide"
             }
           ]
         }
