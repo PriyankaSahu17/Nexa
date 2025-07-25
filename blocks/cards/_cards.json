@@ -38,16 +38,40 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "image",
-          "label": "Image",
+          "name": "carImage",
+          "label": "Car Image",
           "multi": false
         },
         {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "component": "reference",
+          "valueType": "string",
+          "name": "LogoImage",
+          "label": "Logo Image",
+          "multi": false
+        },
+        {
+          "component": "multiselect",
+          "name": "multiselect",
+          "label": "Multi Select",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Option 1",
+              "value": ""
+            },
+            {
+              "name": "Option 2",
+              "value": ""
+            },
+            {
+              "name": "Option 3",
+              "value": ""
+            },
+            {
+              "name": "Option 4",
+              "value": ""
+            }
+          ]
         }
       ]
     }
