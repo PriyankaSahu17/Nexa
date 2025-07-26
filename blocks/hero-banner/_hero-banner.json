@@ -22,62 +22,50 @@
       "fields": [
         {
           "component": "text",
-          "label": "Title",
-          "name": "title",
-          "value": "",
-          "valueType": "string"
-        },
-        {
-          "component": "select",
-          "name": "titleType",
-          "value": "h1",
-          "label": "Title Type",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "h1",
-              "value": "h1"
-            },
-            {
-              "name": "h2",
-              "value": "h2"
-            },
-            {
-              "name": "h3",
-              "value": "h3"
-            },
-            {
-              "name": "h4",
-              "value": "h4"
-            },
-            {
-              "name": "h5",
-              "value": "h5"
-            },
-            {
-              "name": "h6",
-              "value": "h6"
-            }
-          ]
-        },
-        {
-          "component": "richtext",
-          "label": "Description",
-          "name": "description",
-          "value": "",
-          "valueType": "string"
-        },
-        {
-          "component": "aem-content",
-          "label": "Cta Link",
-          "name": "cta",
+          "name": "Logo",
+          "label": "logo",
           "value": "",
           "valueType": "string"
         },
         {
           "component": "text",
-          "label": "Cta Text",
-          "name": "ctaText",
+          "label": "Tagline",
+          "name": "tagline",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "label": "Terms",
+          "name": "terms",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "label": "Primary Cta Link",
+          "name": "primaryCta",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "label": "primary Cta Text",
+          "name": "primaryCtaText",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "label": "Secondary Cta Link",
+          "name": "secondaryCta",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "label": "Secondary Cta Text",
+          "name": "secondaryCtaText",
           "value": "",
           "valueType": "string"
         },

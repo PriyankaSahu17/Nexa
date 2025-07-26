@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "immersive-teaser",
-      "car-carousel"
+      "car-carousel",
+      "hero-banner"
     ]
   },
   {
@@ -39,6 +40,38 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "hero-banner",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "richtext",
+      "aem-content",
+      "reference"
+    ]
+  },
+  {
+    "id": "card",
+    "components": [
+      "text",
+      "image",
+      "button"
+    ]
+  },
+  {
+    "id": "carousel-item",
+    "components": [
+      "image",
+      "text"
+    ]
+  },
+  {
+    "id": "title",
+    "components": [
+      "text"
     ]
   },
   {

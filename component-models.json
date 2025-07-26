@@ -204,6 +204,73 @@
     ]
   },
   {
+      "id": "hero-banner",
+      "fields": [
+        {
+          "component": "text",
+          "name": "Logo",
+          "label": "logo",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "label": "Tagline",
+          "name": "tagline",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "label": "Terms",
+          "name": "terms",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "label": "Primary Cta Link",
+          "name": "primaryCta",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "label": "primary Cta Text",
+          "name": "primaryCtaText",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "label": "Secondary Cta Link",
+          "name": "secondaryCta",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "label": "Secondary Cta Text",
+          "name": "secondaryCtaText",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Image",
+          "multi": false,
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "valueType": "string"
+        }
+      ]
+    },
+  {
     "id": "fragment",
     "fields": [
       {
