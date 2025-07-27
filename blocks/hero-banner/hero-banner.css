@@ -1,38 +1,48 @@
-.section.immersive-teaser-container {
-  background-color: #18171a;
-  color: white;
+.hero-banner{
+  position: relative;
+  width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
 }
-.right-separator {
+.hero-banner-content{
+  margin: 0 36px;
+  @media(min-width: 900px) {
+    margin: 0 48px;
+  }
+}
+.hero-banner video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+.hero-banner-brand
+{
+  @media(min-width: 900px){
+    padding-top: 48px;
+  }
+
+}
+.hero-banner-cta {
+  margin-top: 310px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-}
-.immersive__content {
-  padding: 24px;
-}
-.immersive__content .immersive__heading{
-  font-size: 36px;
-  font-weight: bold;
-  color: #ffffff;
-}
+  @media(min-width: 900px) {
+    display: block;
 
-.immersive__content .immersive__description {
-  font-size: 12px;
-  color: #ffffff;
+  }
+  
 }
-
-.immersive__content .immersive__action .button {
+.hero-banner-cta a.button:any-link {
   padding: 12px 24px;
-  font-size: 14px;
-  background-color: white;
-  color: black;
-  font-weight: normal;
+  font-size: 16px;
   text-decoration: none;
+  border: 2px solid white; /* white border */
   border-radius: 0px;
-  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
   clip-path: polygon(
     10px 0,        /* top-left clipped */
     100% 0,        /* top-right */
@@ -42,70 +52,41 @@
     0 10px         /* back to top-left path */
   );
 }
+.hero-banner-cta a.cta-primary:any-link {
+  background-color: white;
+  color: black;
+}
 
-.immersive__image {
-  position: relative; 
-  overflow: hidden;  
+.hero-banner-cta a.cta-secondary:any-link {
+  background-color: black;
+  color: white;
+  @media(min-width:900px){
+  margin-left: 10px;
+  }
 }
-.immersive__image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
 
-  background: linear-gradient(
-    to right,
-    rgba(24, 23, 26, 1) 0%,
-    rgba(24, 23, 26, 0.7) 15%,
-    rgba(24, 23, 26, 0.4) 30%,
-    transparent 50%
-  );
+.hero-banner-brand .icon{
+  width: 200px;
+  @media(min-width: 900px) {
+    width: 300px;
+  }
+  height: auto;
 }
-@media (min-width: 768px) {
-  .right-separator {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+.hero-banner-brand p{
+  margin: 0;
 }
-}
-@media (min-width: 1024px) {
-  .right-separator {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.immersive__image {
-  flex: 0 0 65%;
-  max-width: 65%;
-  margin-right: 0%;
-  height: 100%;
-}
-.immersive__content .immersive__action .button {
+.hero-banner-brand .tagline p{
   font-size: 20px;
+  font-style: italic;
+  margin: 0;
+  color: white;
+  @media(min-width: 900px){
+    font-size: 24px;
+  }
 }
-.immersive__content {
-  flex: 0 0 35%;
-  max-width: 35%;
-  padding:0;
-  padding-left: 56px;
+.terms{
+  float: right;
+  color: #515151;
+  font-size: 12px;
+  font-style: italic;
 }
-.immersive__content .immersive__heading{
-  font-size: 58px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  color: rgb(255, 255, 255);
-}
-
-.immersive__content .immersive__description {
-  font-size: 18px;
-  color: #ffffff;
-  padding-bottom: 56px;
-}
-
-}
-
-

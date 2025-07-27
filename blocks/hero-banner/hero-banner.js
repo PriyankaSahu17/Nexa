@@ -1,65 +1,99 @@
-
-import { createOptimizedPicture } from '../../scripts/aem.js';
-
-
 export default function decorate(block) {
-  const container = document.createElement('div');
-  container.className = 'right-separator';
+  // --- structure your content ---
+  const content = document.createElement('div');
+  content.className = 'hero-banner-content';
+  const brand = document.createElement('div');
+  brand.className = 'hero-banner-brand';
 
-  const bodyDiv = document.createElement('div');
-  bodyDiv.className = 'immersive__content';
+  const cta = document.createElement('div');
+  cta.className = 'hero-banner-cta';
 
-  const imageDiv = document.createElement('div');
-  imageDiv.className = 'immersive__image';
-
-  const wrapper = document.createElement('div');
-  wrapper.className = 'immersive_content_wrapper';
-
-  const textContainer = document.createElement('div');
-  textContainer.className = 'immersive_content_textContainer';
-
-  const actionContainer = document.createElement('div');
-  actionContainer.className = 'immersive__action';
-
-
-  [...block.children].forEach((row) => {
-    const content = row.firstElementChild;
-
-    if (content && content.querySelector('picture')) {
-      const img = content.querySelector('img');
-      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-      imageDiv.append(optimizedPic);
-    } else if (content) {
-
-      const h1 = content.querySelector('h1');
-      if (h1) {
-        h1.classList.add('immersive__heading');
-        textContainer.append(h1);
-      }
-
-      content.querySelectorAll('p').forEach((p) => {
-        const onlyChild = p.children.length === 1 && p.firstElementChild?.tagName === 'A';
-
-        if (onlyChild) {
-          const a = p.querySelector('a');
-          a.classList.add('immersive__button');
-          actionContainer.append(a);
-        } else {
-          p.classList.add('immersive__paragraph');
-          const descDiv = document.createElement('div');
-          descDiv.className = 'immersive__description';
-          descDiv.append(p);
-          textContainer.append(descDiv);
-        }
-      });
-    }
+  const classes = ['logo', 'tagline', 'terms', 'cta-primary', 'cta-secondary', 'fallback-image'];
+  classes.forEach((c, i) => {
+    const section = block.children[i];
+    if (section) section.classList.add(c);
   });
+  const logo = block.querySelector('.logo');
+  const tagline = block.querySelector('.tagline');
+  const terms = block.querySelector('.terms');
+  const ctaPrimary = block.querySelector('.cta-primary');
+  const ctaFirst= ctaPrimary.querySelector('a');
+  ctaFirst.classList.add('cta-primary');
+  const ctaSecondary = block.querySelector('.cta-secondary');
+  const ctaSecond = ctaSecondary.querySelector('a');
+  ctaSecond.classList.add('cta-secondary');
+  const fallbackImage = block.querySelector('.fallback-image'); // e.g. <picture> or <img>
 
-  wrapper.append(textContainer, actionContainer);
-  bodyDiv.append(wrapper);
-  container.append(bodyDiv, imageDiv);
+  brand.append(logo, tagline);
+  cta.append(ctaFirst, ctaSecond);
 
   block.textContent = '';
-  block.append(container);
-}
+  content.append(brand, cta, terms);
 
+  // --- video setup ---
+  const desktopVideo = '../assets/E_vitara_desktop.mp4';
+  const mobileVideo = '../assets/E_vitara_mobile.mp4';
+  const breakpoint = 768;
+
+  const video = document.createElement('video');
+  video.className = 'hero-banner-video';
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.autoplay = true;             // will only autoplay if muted + inline on iOS
+  video.preload = 'metadata';
+
+  // if you captured an <img> or <picture> as fallback, try to use it as poster
+  const posterImg = fallbackImage?.querySelector('img')?.src || fallbackImage?.getAttribute?.('src');
+  if (posterImg) video.setAttribute('poster', posterImg);
+
+  const source = document.createElement('source');
+  source.type = 'video/mp4';
+  video.appendChild(source);
+  block.append(content);
+  block.append(video);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mql = window.matchMedia(`(max-width: ${breakpoint}px)`);
+
+  const pickSrc = () => (mql.matches ? mobileVideo : desktopVideo);
+
+  function applySrc() {
+    if (prefersReducedMotion) {
+      // don’t autoplay heavy videos for users who prefer reduced motion
+      video.pause();
+      video.removeAttribute('src');
+      source.removeAttribute('src');
+      // show fallback image element if you have it
+      if (fallbackImage && !fallbackImage.isConnected) {
+        block.insertBefore(fallbackImage, video);
+      }
+      return;
+    }
+
+    const targetSrc = pickSrc();
+    if (source.src.endsWith(targetSrc)) return;
+
+    source.src = targetSrc;
+    video.load();
+    video.play().catch(() => {
+      // Autoplay could be blocked – show fallback
+      if (fallbackImage && !fallbackImage.isConnected) {
+        block.insertBefore(fallbackImage, video);
+      }
+    });
+  }
+
+  // initial load
+  applySrc();
+
+  // update on resize (only when breakpoint crossing matters)
+  mql.addEventListener ? mql.addEventListener('change', applySrc) : window.addEventListener('resize', applySrc);
+
+  // optional: handle video errors -> show fallback
+  video.addEventListener('error', () => {
+    if (fallbackImage && !fallbackImage.isConnected) {
+      block.insertBefore(fallbackImage, video);
+    }
+  });
+}
