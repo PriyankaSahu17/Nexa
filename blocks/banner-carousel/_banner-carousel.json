@@ -68,7 +68,7 @@
   ],
   "filters": [
     {
-      "id": "banner-carousel",
+      "id": "banner-car-carousel",
       "components": [
         "banner-carousel-item"
       ]

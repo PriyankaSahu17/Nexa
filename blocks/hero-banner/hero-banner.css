@@ -5,7 +5,7 @@
 }
 .hero-banner-content{
   margin: 0 36px;
-  @media(min-width: 900px) {
+  @media(min-width: 600px) {
     margin: 0 48px;
   }
 }
@@ -20,7 +20,7 @@
 }
 .hero-banner-brand
 {
-  @media(min-width: 900px){
+  @media(min-width: 600px){
     padding-top: 48px;
   }
 
@@ -29,7 +29,7 @@
   margin-top: 310px;
   display: flex;
   flex-direction: column;
-  @media(min-width: 900px) {
+  @media(min-width: 600px) {
     display: block;
 
   }
@@ -60,14 +60,14 @@
 .hero-banner-cta a.cta-secondary:any-link {
   background-color: black;
   color: white;
-  @media(min-width:900px){
+  @media(min-width:600px){
   margin-left: 10px;
   }
 }
 
 .hero-banner-brand .icon{
   width: 200px;
-  @media(min-width: 900px) {
+  @media(min-width: 600px) {
     width: 300px;
   }
   height: auto;
@@ -80,7 +80,7 @@
   font-style: italic;
   margin: 0;
   color: white;
-  @media(min-width: 900px){
+  @media(min-width: 600px){
     font-size: 24px;
   }
 }

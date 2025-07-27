@@ -18,8 +18,7 @@
       "fragment",
       "immersive-teaser",
       "car-carousel",
-      "hero-banner",
-      "banner-carousel"
+      "hero-banner"
     ]
   },
   {
@@ -87,20 +86,6 @@
     "id": "car-carousel",
     "components": [
       "carousel-item"
-    ]
-  },
-  {
-    "id": "banner-carousel",
-    "components": [
-      "banner-carousel-item"
-    ]
-  },
-  {
-    "id": "banner-carousel-item",
-    "components": [
-      "reference",
-      "text",
-      "aem-content"
     ]
   }
 ]

@@ -404,38 +404,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "banner-carousel-item",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "desktop-image",
-        "label": "Desktop Image",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "mobile-image",
-        "label": "Mobile Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "value": "",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "label": "Banner Link",
-        "name": "banner-link",
-        "value": "",
-        "valueType": "string"
-      }
-    ]
   }
 ]
