@@ -43,9 +43,9 @@ export default function decorate(block) {
   video.autoplay = true;
   video.preload = 'metadata';
 
-  const source = document.createElement('source');
-  source.type = 'video/mp4';
-  video.appendChild(source);
+  // const source = document.createElement('source');
+  // source.type = 'video/mp4';
+  // video.appendChild(source);
 
   block.append(content);
   block.append(video);
