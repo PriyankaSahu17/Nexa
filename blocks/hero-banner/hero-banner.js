@@ -54,13 +54,13 @@ export default function decorate(block) {
 
   const applySrc = () => {
     const next = mql.matches ? mobileVideo : desktopVideo;
-    if (next === currentSrc) return; // avoid reloading the same file
+    if (next === currentSrc) return; 
     currentSrc = next;
     video.src = next;
     video.load();
     video.play().catch(() => { });
   };
 
-  applySrc();                         // set initially
-  mql.addEventListener('change', applySrc); // update when crossing the breakpoint
+  applySrc();                         
+  mql.addEventListener('change', applySrc); 
 }
